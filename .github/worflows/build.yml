@@ -1,0 +1,23 @@
+release:
+    name: Release packages
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false # GITHUB_TOKEN must not be set for the semantic release
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.17.6
+      - name: Bootstrap
+        run: yarn bootstrap --ci
+      - name: Configure npm
+        run: |
+          echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+          cat .npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: 'Run multi-semantic-release'
+        run: '$(yarn bin)/multi-semantic-release --deps.bump=override'
