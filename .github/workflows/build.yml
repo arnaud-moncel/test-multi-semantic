@@ -19,10 +19,10 @@ jobs:
       - name: Bootstrap
         run: yarn bootstrap --ci
       - name: Echo
-        run: echo $NPM_TOKEN 
+        run: echo ${secrets.NPM_TOKEN}
       - name: Configure npm
         run: |
-          echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+          echo '//registry.npmjs.org/:_authToken=${secrets.NPM_TOKEN}' > .npmrc
           cat .npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
