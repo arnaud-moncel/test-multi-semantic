@@ -18,9 +18,10 @@ jobs:
           node-version: 14.17.6
       - name: Bootstrap
         run: yarn bootstrap --ci
+      - name: Echo
+        run: echo $NPM_TOKEN 
       - name: Configure npm
         run: |
-          echo $NPM_TOKEN
           echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
           cat .npmrc
         env:
