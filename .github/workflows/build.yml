@@ -39,7 +39,7 @@ jobs:
   #       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   extract_branch_name:
-    shell: bash
+    runs-on: ubuntu-latest
     steps:
       - name: Extract branch name
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages-${{ steps.extract_branch.outputs.branch }}
-    # needs: [release]
+    needs: [extract_branch_name]
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v2
