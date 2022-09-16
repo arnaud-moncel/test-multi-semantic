@@ -42,7 +42,7 @@ jobs:
     name: Publish doc
     runs-on: ubuntu-latest
     environment:
-      name: github-pages-${{ steps.extract_branch.outputs.branch }}
+      name: github-pages-$GITHUB_REF_NAME
     needs: [extract_branch_name]
     steps:
       - name: Setup Pages
@@ -51,9 +51,5 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: api-reference
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
