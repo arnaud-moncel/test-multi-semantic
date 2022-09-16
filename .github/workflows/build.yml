@@ -50,7 +50,7 @@ jobs:
   doc:
     name: Publish doc
     runs-on: ubuntu-latest
-    environment: github-pages-${{ echo $GITHUB_REF_NAME }}
+    environment: github-pages-${{ GITHUB_REF_NAME }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/configure-pages@v2
