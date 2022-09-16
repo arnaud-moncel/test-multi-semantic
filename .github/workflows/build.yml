@@ -43,7 +43,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages-$GITHUB_REF_NAME
-    needs: [extract_branch_name]
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v2
