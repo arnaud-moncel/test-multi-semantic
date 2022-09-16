@@ -38,11 +38,17 @@ jobs:
   #       GIT_COMMITTER_NAME: ${{ secrets.GIT_COMMITTER_NAME }}
   #       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+  extract_branch_name
+    name: Extract branch name
+    shell: bash
+    run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+    id: extract_branch
+
   doc:
     name: Publish doc
     runs-on: ubuntu-latest
     environment:
-      name: github-pages-${{ echo ${GITHUB_REF#refs/heads/} }}
+      name: github-pages-${{ steps.extract_branch.outputs.branch }}
     # needs: [release]
     steps:
       - name: Setup Pages
