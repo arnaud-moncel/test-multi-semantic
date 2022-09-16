@@ -44,11 +44,9 @@ jobs:
     environment:
       name: github-pages-$GITHUB_REF_NAME
     steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Archive documentation artifacts
-        uses: actions/upload-pages-artifact@v1
+      - uses: actions/checkout@v2
+      - uses: actions/configure-pages@v2
+      - uses: actions/upload-pages-artifact@v1
         with:
           path: api-reference
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+      - uses: actions/deploy-pages@v1
