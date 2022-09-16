@@ -39,10 +39,11 @@ jobs:
   #       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   extract_branch_name:
-    name: Extract branch name
     shell: bash
-    run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-    id: extract_branch
+    steps:
+      - name: Extract branch name
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
 
   doc:
     name: Publish doc
