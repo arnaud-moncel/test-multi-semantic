@@ -38,13 +38,6 @@ jobs:
   #       GIT_COMMITTER_NAME: ${{ secrets.GIT_COMMITTER_NAME }}
   #       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  extract_branch_name:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Extract branch name
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-
   doc:
     name: Publish doc
     runs-on: ubuntu-latest
@@ -58,6 +51,9 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: api-reference
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v1
