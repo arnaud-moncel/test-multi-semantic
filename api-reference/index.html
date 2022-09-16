@@ -1,0 +1,216 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Forest Admin - API reference</title><meta name="description" content="Documentation for Forest Admin - API reference"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+  <div class="tsd-toolbar-contents container">
+  <div class="table-cell" id="tsd-search" data-base=".">
+  <div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+  <ul class="results">
+  <li class="state loading">Preparing search index...</li>
+  <li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">Forest Admin - API reference</a></div>
+  <div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+  <div class="container container-main">
+  <div class="col-8 col-content">
+  <div class="tsd-page-title">
+  <h2>Forest Admin - API reference</h2></div>
+  <div class="tsd-panel tsd-typography">
+  <a href="#forest-admin---agent-nodejs" id="forest-admin---agent-nodejs" style="color: inherit; text-decoration: none;">
+    <h1>Forest Admin - Agent-nodejs</h1>
+  </a>
+  <p>Forest Admin provides an off-the-shelf administration panel based on a highly-extensible API plugged into your application.</p>
+  <p>This project has been designed with scalability in mind to fit requirements from small projects to mature companies.</p>
+  
+  <a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+    <h2>Installation</h2>
+  </a>
+  <pre><code><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-0">install</span><span class="hl-1"> &amp;&amp; </span><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-0">bootstrap</span>
+  </code></pre>
+  
+  <a href="#who-uses-forest-admin" id="who-uses-forest-admin" style="color: inherit; text-decoration: none;">
+    <h2>Who Uses Forest Admin</h2>
+  </a>
+  <ul>
+  <li><a href="https://www.apartmentlist.com">Apartmentlist</a></li>
+  <li><a href="https://carbonhealth.com">Carbon Health</a></li>
+  <li><a href="https://www.ebanx.com">Ebanx</a></li>
+  <li><a href="https://www.firstcircle.ph">First circle</a></li>
+  <li><a href="https://www.forestadmin.com">Forest Admin</a> of course :-)</li>
+  <li><a href="https://www.heetch.com">Heetch</a></li>
+  <li><a href="https://www.lunchr.co">Lunchr</a></li>
+  <li><a href="https://www.pillow.com">Pillow</a></li>
+  <li><a href="https://www.qonto.eu">Qonto</a></li>
+  <li><a href="https://shadow.tech">Shadow</a></li>
+  <li>And hundreds more…</li>
+  </ul>
+  
+  <a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+    <h2>Getting started</h2>
+  </a>
+  <p><a href="https://docs.forestadmin.com/beta-developer-guide-agents-v2/getting-started/quick-start">https://docs.forestadmin.com/beta-developer-guide-agents-v2/getting-started/quick-start</a></p>
+  
+  <a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+    <h2>Documentation</h2>
+  </a>
+  <p><a href="https://docs.forestadmin.com/beta-developer-guide-agents-v2/">https://docs.forestadmin.com/beta-developer-guide-agents-v2/</a></p>
+  
+  <a href="#how-it-works" id="how-it-works" style="color: inherit; text-decoration: none;">
+    <h2>How it works</h2>
+  </a>
+  <p align="center" style="margin: 60px 0">
+    <img width="100%" src="https://forest-assets.s3.amazonaws.com/Github+README+assets/howitworks.png" alt="Howitworks">
+  </p>
+  
+  <p>Forest Admin consists of two components:</p>
+  <ul>
+  <li>The Admin Frontend is the user interface where you&#39;ll manage your data and configuration.</li>
+  <li>The Admin Backend API hosted on your servers where you can find and extend your data models and all the business logic (routes, actions, …) related to your admin panel.</li>
+  </ul>
+  <p>The Forest Admin NPM package (aka Forest Liana) introspects all your data model
+  and dynamically generates the Admin API hosted on your servers. The Forest Admin
+  interface is a web application that handles communication between the admin
+  user and your application data through the Admin API.</p>
+  
+  <a href="#features" id="features" style="color: inherit; text-decoration: none;">
+    <h2>Features</h2>
+  </a>
+  
+  <a href="#crud" id="crud" style="color: inherit; text-decoration: none;">
+    <h3>CRUD</h3>
+  </a>
+  <p>All of your CRUD operations are natively supported. The API automatically
+  supports your data models&#39; validation and allows you to easily extend or
+  override any API routes&#39; with your very own custom logic.</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/crud.jpeg" alt="CRUD">
+  
+  
+  <a href="#search-amp-filters" id="search-amp-filters" style="color: inherit; text-decoration: none;">
+    <h3>Search &amp; Filters</h3>
+  </a>
+  <p>Forest Admin has a built-in search allowing you to run basic queries to
+  retrieve your application&#39;s data. Set advanced filters based on fields and
+  relationships to handle complex search use cases.</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/search+filters.jpeg" alt="Search and Filters">
+  
+  
+  <a href="#sorting-amp-pagination" id="sorting-amp-pagination" style="color: inherit; text-decoration: none;">
+    <h3>Sorting &amp; Pagination</h3>
+  </a>
+  <p>Sorting and pagination features are natively handled by the Admin API. We&#39;re
+  continuously optimizing how queries are run in order to display results faster
+  and reduce the load of your servers.</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/sorting+pagination.jpeg" alt="Sorting and Pagination">
+  
+  
+  <a href="#custom-action" id="custom-action" style="color: inherit; text-decoration: none;">
+    <h3>Custom action</h3>
+  </a>
+  <p>A custom action is a button which allows you to trigger an API call to execute
+  a custom logic. With virtually no limitations, you can extend the way you
+  manipulate data and trigger actions (e.g. refund a customer, apply a coupon,
+  ban a user, etc.)</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/custom+actions.jpeg" alt="Custom action">
+  
+  
+  <a href="#export" id="export" style="color: inherit; text-decoration: none;">
+    <h3>Export</h3>
+  </a>
+  <p>Sometimes you need to export your data to a good old fashioned CSV. Yes, we
+  know this can come in handy sometimes :-)</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/exports.jpeg" alt="Export">
+  
+  
+  <a href="#segments" id="segments" style="color: inherit; text-decoration: none;">
+    <h3>Segments</h3>
+  </a>
+  <p>Get in app access to a subset of your application data by doing a basic search
+  or typing an SQL query or implementing an API route.</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/segments.jpeg" alt="Segments">
+  
+  
+  <a href="#dashboards" id="dashboards" style="color: inherit; text-decoration: none;">
+    <h3>Dashboards</h3>
+  </a>
+  <p>Forest Admin is able to tap into your actual data to chart out your metrics
+  using a simple UI panel, a SQL query or a custom API call.</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/dashboards.jpeg" alt="Dashboard">
+  
+  
+  <a href="#wysiwyg" id="wysiwyg" style="color: inherit; text-decoration: none;">
+    <h3>WYSIWYG</h3>
+  </a>
+  <p>The WYSIWYG interface saves you a tremendous amount of frontend development
+  time using drag&#39;n&#39;drop as well as advanced widgets to build customizable views.</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/wysiwyg.jpeg" alt="WYSIWYG">
+  
+  
+  <a href="#custom-htmljscss" id="custom-htmljscss" style="color: inherit; text-decoration: none;">
+    <h3>Custom HTML/JS/CSS</h3>
+  </a>
+  <p>Code your own views using JS, HTML, and CSS to display your application data in
+  a more appropriate way (e.g. Kanban, Map, Calendar, Gallery, etc.).</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/smart+views.jpeg" alt="Custom views">
+  
+  
+  <a href="#team-based-permissions" id="team-based-permissions" style="color: inherit; text-decoration: none;">
+    <h3>Team-based permissions</h3>
+  </a>
+  <p>Without any lines of code, manage directly from the UI who has access or can
+  act on which data using a team-based permission system.</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/teams.jpeg" alt="Team based permissions">
+  
+  
+  <a href="#third-party-integrations" id="third-party-integrations" style="color: inherit; text-decoration: none;">
+    <h3>Third-party integrations</h3>
+  </a>
+  <p>Leverage data from third-party services by reconciling it with your
+  application’s data and providing it directly to your Admin Panel. All your
+  actions can be performed at the same place, bringing additional intelligence to
+  your Admin Panel and ensuring consistency.</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/integrations.jpeg" alt="Third-party integrations">
+  
+  
+  <a href="#notes-amp-comments" id="notes-amp-comments" style="color: inherit; text-decoration: none;">
+    <h3>Notes &amp; Comments</h3>
+  </a>
+  <p>Assign your teammates to specific tasks, leave a note or simply comment a
+  record, thereby simplifying collaboration all across your organization.</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/notes+comments.jpeg" alt="Notes and Comments">
+  
+  
+  <a href="#activity-logs" id="activity-logs" style="color: inherit; text-decoration: none;">
+    <h3>Activity logs</h3>
+  </a>
+  <p>Monitor each action executed and follow the trail of modification on any data
+  with an extensive activity log system.</p>
+  <img src="https://forest-assets.s3.amazonaws.com/Github+README+assets/activity+logs.jpeg" alt="Activity logs">
+  
+  
+  <a href="#community" id="community" style="color: inherit; text-decoration: none;">
+    <h2>Community</h2>
+  </a>
+  <p>👇 Join our Developers community for support and more</p>
+  <p><a href="https://community.forestadmin.com"><img src="https://img.shields.io/discourse/posts?label=discourse&server=https%3A%2F%2Fcommunity.forestadmin.com" alt="Discourse developers community"></a></p>
+  </div></div>
+  <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+  <div class="tsd-navigation settings">
+  <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+  <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+  <div class="tsd-accordion-details">
+  <div class="tsd-filter-visibility">
+  <h4 class="uppercase">Member Visibility</h4><form>
+  <ul id="tsd-filter-options">
+  <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+  <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+  <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+  <div class="tsd-theme-toggle">
+  <h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+  <nav class="tsd-navigation primary">
+  <details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+  <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+  <div class="tsd-accordion-details">
+  <ul>
+  <li class="current selected"><a href="modules.html">Forest <wbr/>Admin -<wbr/> API reference</a>
+  <ul>
+  <li class="tsd-kind-module"><a href="modules/_forestadmin_agent.html">@forestadmin/agent</a></li>
+  <li class="tsd-kind-module"><a href="modules/_forestadmin_datasource_mongoose.html">@forestadmin/datasource-<wbr/>mongoose</a></li>
+  <li class="tsd-kind-module"><a href="modules/_forestadmin_datasource_sequelize.html">@forestadmin/datasource-<wbr/>sequelize</a></li>
+  <li class="tsd-kind-module"><a href="modules/_forestadmin_datasource_sql.html">@forestadmin/datasource-<wbr/>sql</a></li>
+  <li class="tsd-kind-module"><a href="modules/_forestadmin_datasource_toolkit.html">@forestadmin/datasource-<wbr/>toolkit</a></li></ul></li></ul></div></details></nav></div></div>
+  <div class="overlay"></div><script src="assets/main.js"></script></body></html>

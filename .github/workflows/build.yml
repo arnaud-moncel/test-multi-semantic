@@ -37,3 +37,20 @@ jobs:
         GIT_COMMITTER_EMAIL: ${{ secrets.GIT_COMMITTER_EMAIL }}
         GIT_COMMITTER_NAME: ${{ secrets.GIT_COMMITTER_NAME }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  doc:
+    name: Publish doc
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages-${{ echo ${GITHUB_REF#refs/heads/} }}
+    needs: [release]
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Archive documentation artifacts
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: api-reference
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
