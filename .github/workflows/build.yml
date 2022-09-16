@@ -38,7 +38,7 @@ jobs:
   #       GIT_COMMITTER_NAME: ${{ secrets.GIT_COMMITTER_NAME }}
   #       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  extract_branch_name
+  extract_branch_name:
     name: Extract branch name
     shell: bash
     run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
